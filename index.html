@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Season's Diamond</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+</head>
+<body class="quill-cursor">
+
+    <div id="overlay">
+        <div class="envelope-content" onclick="openLetter()">
+            <div class="wax-seal">LW</div>
+            <p class="click-text">A Private Correspondence</p>
+            <p class="sub-text">(Click the seal to open)</p>
+        </div>
+    </div>
+
+    <iframe id="music-player" width="1" height="1" src="" frameborder="0" allow="autoplay" style="display:none;"></iframe>
+
+    <main class="letter-container" id="main-letter">
+        <div class="wax-seal-small">LW</div>
+        <header>
+            <p class="whistledown-header">Lady Whistledown's Society Papers</p>
+            <p class="date">The 14th of February, 2026</p>
+        </header>
+
+        <section class="content" id="letter-content">
+            <h1 class="dearest">Dearest Reader,</h1>
+            <p class="fade-in">The season is upon us, and while the ton is abuzz with gossip, this author finds their attention captured by only one person.</p>
+            
+            <div class="photo-frame fade-in">
+                <img src="diamonds.jpg" alt="The Diamond" id="diamond-img">
+            </div>
+
+            <p class="proclamation fade-in">Will you do me the honor of being my Valentine?</p>
+        </section>
+
+        <div class="actions fade-in">
+            <button id="yes-btn">Indeed</button>
+            <button id="no-btn">I Shalt Not</button>
+        </div>
+
+        <div id="gallery" style="display:none;">
+            <p style="margin-top: 20px; font-style: italic; font-family: 'Playfair Display';">A few more moments of note...</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="photo_6082429601545129884_y.jpg" class="gallery-img"></div>
+                <div class="gallery-item"><img src="2.jpg" class="gallery-img"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

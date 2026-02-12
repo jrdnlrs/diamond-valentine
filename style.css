@@ -1,0 +1,81 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0; padding: 0; width: 100vw; height: 100vh;
+    background-color: #fdfaf5;
+    /* Textured Background Fix */
+    background-image: 
+        radial-gradient(circle, #ffffffcc, #f4eee1),
+        url('https://www.transparenttextures.com/patterns/cream-paper.png');
+    background-blend-mode: multiply;
+    display: flex; justify-content: center; align-items: center;
+    font-family: 'Playfair Display', serif; overflow: hidden;
+}
+
+.quill-cursor {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>✒️</text></svg>"), auto;
+}
+
+#overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #fdfaf5;
+    background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+    z-index: 100; display: flex; justify-content: center; align-items: center;
+    transition: opacity 1.5s ease;
+}
+
+.envelope-content { text-align: center; cursor: pointer; }
+
+.wax-seal, .wax-seal-small { 
+    width: 65px; height: 65px; 
+    background: radial-gradient(circle, #a80000, #8b0000);
+    color: #d4af37; border-radius: 50%; 
+    display: flex; align-items: center; justify-content: center; 
+    font-family: 'Cinzel', serif; font-weight: bold; font-size: 1.2rem;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.4), inset 0 0 10px rgba(0,0,0,0.3);
+    border: 2px solid #9e0000; margin: 0 auto 20px auto; 
+}
+
+.letter-container {
+    background: white; border: 1px solid #c5a059; outline: 5px double #c5a059;
+    outline-offset: -15px; padding: 40px; max-width: 500px; width: 95%;
+    text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    display: flex; flex-direction: column; align-items: center;
+    position: relative; opacity: 0; transform: scale(0.95); transition: all 1s ease;
+}
+
+/* FADE-IN FIX: Ensures buttons become fully visible */
+.fade-in { opacity: 0; transform: translateY(15px); transition: all 1s ease; }
+.active .fade-in { opacity: 1 !important; transform: translateY(0); }
+.active .fade-in:nth-child(1) { transition-delay: 0.5s; }
+.active .fade-in:nth-child(2) { transition-delay: 1.5s; }
+.active .fade-in:nth-child(3) { transition-delay: 2.5s; }
+.active .actions { transition-delay: 3.5s; }
+
+.photo-frame { width: 180px; height: 180px; margin: 20px auto; border-radius: 50%; border: 4px solid #fff; outline: 2px solid #c5a059; overflow: hidden; }
+#diamond-img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.3); }
+
+.gallery-grid { display: flex; justify-content: bottom; gap: 15px; margin-top: 20px; width: 100%; }
+.gallery-item { width: 140px; height: 140px; border: 2px solid #c5a059; border-radius: 4px; overflow: hidden; }
+.gallery-img { width: 100%; height: 100%; object-fit: cover; }
+
+.dearest { font-family: 'Great Vibes', cursive; font-size: 3rem; color: #A3C1AD; margin: 10px 0; }
+.whistledown-header { font-family: 'Cinzel', serif; letter-spacing: 2px; border-bottom: 1px solid #333; font-size: 0.8rem; margin-bottom: 5px; }
+
+.actions { margin-top: 30px; width: 100%; display: flex; justify-content: center; gap: 20px; min-height: 50px; position: relative; }
+
+/* INDEED BUTTON FIX */
+#yes-btn { 
+    background-color: #87ab96 !important; 
+    color: white !important; 
+    border: none;
+    font-family: 'Cinzel', serif; padding: 12px 25px; cursor: pointer; border-radius: 4px;
+}
+
+#no-btn { 
+    background: white; border: 1px solid #ccc; z-index: 1000; transition: none; 
+    font-family: 'Cinzel', serif; padding: 12px 25px; cursor: pointer; border-radius: 4px;
+}
+
+.petal { position: fixed; top: -10px; width: 10px; height: 10px; background-color: #e0b1cb; border-radius: 150% 0 150% 0; z-index: 5; pointer-events: none; animation: fall linear forwards; }
+@keyframes fall { to { transform: translateY(105vh) rotate(360deg); } }
